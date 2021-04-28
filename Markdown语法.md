@@ -1,8 +1,8 @@
 <!--
  * @Author: jhliang
  * @Date: 2020-11-18 11:17:19
- * @LastEditTime: 2020-11-18 18:28:46
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-13 10:18:52
+ * @LastEditors: jhliang
  * @Description: In User Settings Edit
  * @FilePath: \MyBook\Markdown语法.md
 -->
@@ -142,3 +142,9 @@ _注意_：上述的\[1]:https:://github.com/WuhuGoldPilot/MyBook "Markdown"不�
 > \`ctrl+a\`  
 > 效果：  
 > `ctrl+a`
+
+# 删除线
+
+~~xxx~~
+
+~~这是删除的线~~

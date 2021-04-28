@@ -1,7 +1,7 @@
 <!--
  * @Author: jhliang
  * @Date: 2020-11-18 11:13:26
- * @LastEditTime: 2020-11-19 16:05:43
+ * @LastEditTime: 2020-11-19 16:30:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \MyBook\Kubernetes\Kubernetes重点概念.md
@@ -129,3 +129,32 @@ kube-proxy 维护节点上的网络规则。这些网络规则允许从集群内
 
 如果操作系统提供了数据包过滤层并可用的话，kube-proxy会通过它来实现网络规则。否则，kube-proxy 仅转发流量本身。
 
+### **容器运行时（Container Runtime）**
+
+容器运行环境是负责运行容器的软件。
+
+Kubernetes 支持多个容器运行环境: docker、 containerd、CRI-O 以及任何实现Kubernetes CRI (容器运行环境接口)。
+
+## 插件（Addons）
+
+插件使用 Kubernetes 资源（DaemonSet、 Deployment等）实现集群功能。 因为这些插件提供集群级别的功能，插件中命名空间域的资源属于 kube-system 命名空间。
+
+### **DNS**
+
+尽管其他插件都并非严格意义上的必需组件，但几乎所有 Kubernetes 集群都应该有集群DNS，因为很多示例都需要DNS服务。
+
+集群DNS是一个DNS服务器，和环境中的其他 DNS 服务器一起工作，它为Kubernetes服务提供DNS记录。
+
+Kubernetes 启动的容器自动将此 DNS 服务器包含在其 DNS 搜索列表中。
+
+### **Web 界面（仪表盘）**
+
+Dashboard 是Kubernetes 集群的通用的、基于 Web 的用户界面。 它使用户可以管理集群中运行的应用程序以及集群本身并进行故障排除。
+
+### **容器资源监控**
+
+容器资源监控 将关于容器的一些常见的时间序列度量值保存到一个集中的数据库中，并提供用于浏览这些数据的界面。
+
+### **集群层面日志**
+
+集群层面日志 机制负责将容器的日志数据 保存到一个集中的日志存储中，该存储能够提供搜索和浏览接口。
