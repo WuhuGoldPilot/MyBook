@@ -1,7 +1,11 @@
 <!--
  * @Author: jhliang
  * @Date: 2020-11-18 11:17:19
- * @LastEditTime: 2021-03-16 15:12:50
+<<<<<<< HEAD
+ * @LastEditTime: 2021-05-17 10:21:59
+=======
+ * @LastEditTime: 2021-01-13 10:18:52
+>>>>>>> 1d9725c355566dca365fce02043d4b09b011edf4
  * @LastEditors: jhliang
  * @Description: In User Settings Edit
  * @FilePath: \MyBook\Markdown语法.md
@@ -143,26 +147,8 @@ _注意_：上述的\[1]:https:://github.com/WuhuGoldPilot/MyBook "Markdown"不�
 > 效果：  
 > `ctrl+a`
 
-# 表格
+# 删除线
 
-Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。
+~~xxx~~
 
-> | 表头 | 表头 | 
-> | ---- | ----- |
-> | 内容 | 内容 | 
-> | 内容 | 内容 | 
-
-我们可以设置表格的对齐方式：
-
-1. **\-:** 设置内容和标题栏居右对齐
-
-2. **\:-** 设置内容和标题栏居左对齐
-
-3. **\:-:** 设置内容和标题栏居中对齐
-
-> | left | right | middle |
-> | :---- |-----: | :--: | 
-> | 左 | 右 | 中 | 
-> | 左 | 右 | 中 | 
-
-
+~~这是删除的线~~
