@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-release-script
+  namespace: devops
+  labels:
+    app: go-release-script
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-release-script
+  template:
+    metadata:
+      labels:
+        app: go-release-script
+    spec:
+      imagePullSecrets:
+        - name: dg-registry
+      containers:
+        - name: release-script
+          image: mmzwwwdocker.digitalgd.com:31104/devops/release-script:gdczt
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+
+      dnsPolicy: ClusterFirst
+      hostAliases:
+        - hostnames:
+            - ctglqdocker.gdczt.gov.cn
+          ip: 10.130.88.12

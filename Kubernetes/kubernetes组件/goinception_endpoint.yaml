@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: goinception
+  namespace: base
+subsets:
+- addresses:
+  - ip: 173.16.194.13
+  ports:
+  - port: 4000
+    protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goinception
+  namespace: base
+spec:
+  ports:
+  - port: 4000
+    protocol: TCP
+    targetPort: 4000
+  type: ClusterIP

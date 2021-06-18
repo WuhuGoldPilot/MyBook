@@ -1,16 +1,3 @@
-<!--
- * @Author: jhliang
- * @Date: 2020-11-18 11:17:19
-<<<<<<< HEAD
- * @LastEditTime: 2021-06-04 16:38:04
-=======
- * @LastEditTime: 2021-01-13 10:18:52
->>>>>>> 1d9725c355566dca365fce02043d4b09b011edf4
- * @LastEditors: jhliang
- * @Description: In User Settings Edit
- * @FilePath: \MyBook\Markdown语法.md
--->
-
 # 标题
 
 markdown 标题有两种形式
@@ -125,7 +112,7 @@ void main(){
 > _效果_：  
 > [我的 GitHub][1]
 
-[1]: https:://github.com/WuhuGoldPilot/MyBook 'Markdown'
+[1]: https:://github.com/WuhuGoldPilot/MyBook "Markdown"
 
 _注意_：上述的\[1]:https:://github.com/WuhuGoldPilot/MyBook "Markdown"不出现在区块中。
 

@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mp-gateway-service
+  namespace: mp
+spec:
+  selector:
+    app: mp-gateway
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8901
+      targetPort: 8901
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mp-gateway
+  namespace: mp
+  labels:
+    app: mp-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mp-gateway
+  template:
+    metadata:
+      labels:
+        app: mp-gateway
+    spec:
+      imagePullSecrets:
+        - name: zebinchen
+      containers:
+        - name: mp-gateway
+          image: registry.dg.com/cadp/mp-gateway:MP_VERSION
+          ports:
+            - containerPort: 8901
+          env:
+            - name: EUREKA_DEFAULT_ZONE
+              value: "http://mp-eureka-0.mp-eureka-inside:8761/eureka/,http://mp-eureka-1.mp-eureka-inside:8761/eureka/,http://mp-eureka-2.mp-eureka-inside:8761/eureka/"
